@@ -107,4 +107,6 @@ a {
     .hidden-mobile {
         display: none;
     }
+    .playbtn {
+        margin-left: 20px;
 }
