@@ -1,25 +1,44 @@
 $(document).ready(function () {
-    $('.mobile').on('click', '.playbtn', function () {
+    $('.mobile, .desktop').on('click', '.playbtn', function () {
         changePlayBtn(this);
         playRadio(this);
     });
-});
 
-$(document).ready(function () {
-    $('.desktop').on('click', '.playbtn', function () {
-        changePlayBtn(this);
-        playRadio(this);
+    const noStationsFoundDesktop = $('#noStationsFoundDesktop');
+    const noStationsFoundMobile = $('#noStationsFoundMobile');
+
+    $('audio').each(function () {
+        this.src += '?cachebust=' + (+new Date());
+    });
+
+    $('.searchbar').on('input', function () {
+        const searchTerm = normalizeString($(this).val());
+        let stationsFound = false;
+
+        $('.box').each(function () {
+            const radioName = normalizeString($(this).find('h1').text());
+
+            if (radioName.includes(searchTerm)) {
+                $(this).css('display', 'flex');
+                stationsFound = true;
+            } else {
+                $(this).css('display', 'none');
+            }
+        });
+
+        noStationsFoundDesktop.css('display', stationsFound ? 'none' : 'block');
+        noStationsFoundMobile.css('display', stationsFound ? 'none' : 'block');
     });
 });
 
 function playRadio(audioId) {
-    var audio = document.getElementById(audioId);
+    const audio = $('#' + audioId)[0];
 
     if (audio.paused) {
-      audio.play();
+        audio.play();
     } else {
-      audio.pause();
-      location.reload(true);
+        audio.pause();
+        location.reload(true);
     }
 }
 
@@ -29,32 +48,4 @@ function changePlayBtn(clickedButton) {
 
 function normalizeString(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
-
-window.onload = function () {
-    const noStationsFoundDesktop = document.getElementById('noStationsFoundDesktop');
-    const noStationsFoundMobile = document.getElementById('noStationsFoundMobile');
-
-    for (const a of document.getElementsByTagName('audio')) {
-        a.src += '?cachebust=' + (+new Date());
-    }
-
-    document.querySelector('.searchbar').addEventListener('input', function () {
-        const searchTerm = normalizeString(this.value);
-        let stationsFound = false;
-
-        document.querySelectorAll('.box').forEach(function (box) {
-            const radioName = normalizeString(box.querySelector('h1').innerText);
-
-            if (radioName.includes(searchTerm)) {
-                box.style.display = 'flex';
-                stationsFound = true;
-            } else {
-                box.style.display = 'none';
-            }
-        });
-        
-        noStationsFoundDesktop.style.display = stationsFound ? 'none' : 'block';
-        noStationsFoundMobile.style.display = stationsFound ? 'none' : 'block';
-    });
 }
