@@ -71,15 +71,6 @@ a {
     height: 100%;
 }
 
-.box2 {
-    margin-left: 20px;
-    width: 45%;
-}
-
-.box3 {
-    width: 60%;
-}
-
 /* Styles for buttons */
 .btn {
     color: #ffffff;
@@ -110,6 +101,11 @@ a {
         font-size: 24px;
     }
 
+    .box2 {
+        margin-left: 20px;
+        width: 60%;
+    }
+    
     .desktop {
         display: none;
     }
@@ -130,6 +126,15 @@ a {
 @media (min-width: 767px) {
     .mobile {
         display: none;
+    }
+
+    .box2 {
+        margin-left: 20px;
+        width: 45%;
+    }
+
+    .box3 {
+        width: 60%;
     }
 
     #noStationsFoundDesktop {
