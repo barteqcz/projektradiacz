@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.mobile, .desktop').on('click', '.playbtn', function() {
+    $('body').on('click', '.playbtn', function() {
         const clickedButton = $(this);
         changePlayBtn(clickedButton);
         playRadio(clickedButton.data('radio-id'));
