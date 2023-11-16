@@ -24,7 +24,6 @@ a {
 }
 
 .taskbar-icons {
-    padding-left: 20px;
     color: #ffffff;
 }
 
@@ -42,6 +41,7 @@ a {
     border-radius: 18px;
     border: 0;
     font-size: 14px;
+    margin-right: 20px;
 }
 
 /* Styles for station boxes */
