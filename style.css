@@ -13,33 +13,13 @@ a {
     text-decoration: none;
 }
 
+/* Styles for the taskbar */
 #taskbar {
     color: #f1efef;
     height: 100px;
     display: flex;
     align-items: center;
     padding-left: 20px;
-}
-
-/* Common styles for both mobile and desktop */
-.stations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Styles for mobile view */
-.mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Styles for desktop view */
-.desktop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Styles for search bar */
@@ -49,6 +29,13 @@ a {
     border-radius: 18px;
     border: 0;
     font-size: 14px;
+}
+
+/* Common styles for both mobile and desktop */
+.stations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Styles for station boxes */
@@ -71,28 +58,18 @@ a {
     height: 100%;
 }
 
-/* Styles for buttons */
-.btn {
-    color: #ffffff;
-    border-radius: 18px;
-    background-color: #000000;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-    width: 200px;
+/* Styles for footer */
+.footer {
+    height: 30px;
 }
 
+/* Helper classes styles */
 .btn-link {
     cursor: pointer;
 }
 
 .icon-right {
     float: right;
-}
-
-/* Styles for footer */
-.footer {
-    height: 30px;
 }
 
 /* Responsive styles */
@@ -105,12 +82,8 @@ a {
         margin-left: 15px;
         width: 50%;
     }
-    
-    .desktop {
-        display: none;
-    }
 
-    #noStationsFoundMobile {
+    #noStationsFound {
         display: none;
         text-align: center;
         color: red;
@@ -121,13 +94,13 @@ a {
     .fa-custom-size {
         font-size: 50px;
     }
+
+    .btn {
+        display: none;
+    }
 }
 
 @media (min-width: 767px) {
-    .mobile {
-        display: none;
-    }
-
     .box2 {
         margin-left: 20px;
         width: 45%;
@@ -137,7 +110,7 @@ a {
         width: 60%;
     }
 
-    #noStationsFoundDesktop {
+    #noStationsFound {
         display: none;
         text-align: center;
         color: red;
@@ -147,5 +120,15 @@ a {
 
     .fa-custom-size {
         font-size: 64px;
+    }
+
+    .btn {
+        color: #ffffff;
+        border-radius: 18px;
+        background-color: #000000;
+        padding: 12px;
+        border: 0;
+        font-size: 16px;
+        width: 200px;
     }
 }
