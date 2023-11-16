@@ -5,8 +5,7 @@ $(document).ready(function() {
         playRadio(clickedButton.data('radio-id'));
     });
 
-    const noStationsFoundDesktop = $('#noStationsFoundDesktop');
-    const noStationsFoundMobile = $('#noStationsFoundMobile');
+    const noStationsFound = $('#noStationsFound');
 
     $('audio').each(function() {
         this.src = this.src + '?cachebust=' + new Date();
@@ -27,8 +26,7 @@ $(document).ready(function() {
             }
         });
 
-        noStationsFoundDesktop.toggle(!stationsFound);
-        noStationsFoundMobile.toggle(!stationsFound);
+        noStationsFound.toggle(!stationsFound);
     });
 
     setAudioSource();
