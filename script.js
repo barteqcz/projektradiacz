@@ -9,7 +9,7 @@ $(document).ready(function() {
     const noStationsFoundMobile = $('#noStationsFoundMobile');
 
     $('audio').each(function() {
-        this.src += '?cachebust=' + (+new Date());
+        this.src = this.src + '?cachebust=' + new Date();
     });
 
     $('.searchbar').on('input', function() {
