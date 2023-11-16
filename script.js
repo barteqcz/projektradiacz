@@ -30,6 +30,8 @@ $(document).ready(function() {
         noStationsFoundDesktop.toggle(!stationsFound);
         noStationsFoundMobile.toggle(!stationsFound);
     });
+
+    setAudioSource();
 });
 
 function playRadio(audioId) {
@@ -49,4 +51,21 @@ function changePlayBtn(clickedButton) {
 
 function normalizeString(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+function setAudioSource() {
+    const rzurnal = document.getElementById('rzurnal');
+    const rdvojka = document.getElementById('rdvojka');
+    const rvltava = document.getElementById('rvltava');
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (isChrome) {
+        rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3';
+        rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3';
+        rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3';
+    } else {
+        rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg';
+        rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg';
+        rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg';
+    }
 }
