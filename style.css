@@ -13,13 +13,27 @@ a {
     text-decoration: none;
 }
 
+
 /* Styles for the taskbar */
 #taskbar {
     color: #f1efef;
     height: 100px;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    margin-left: 2%;
+}
+
+.taskbar-icons {
+    margin-left: 20px;
+    color: #ffffff;
+    float: right;
+}
+
+/* Common styles for both mobile and desktop */
+.stations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Styles for search bar */
@@ -29,13 +43,6 @@ a {
     border-radius: 18px;
     border: 0;
     font-size: 14px;
-}
-
-/* Common styles for both mobile and desktop */
-.stations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Styles for station boxes */
@@ -70,6 +77,10 @@ a {
 
 .icon-right {
     float: right;
+}
+
+.fa-size-40 {
+    font-size: 40px;
 }
 
 /* Responsive styles */
