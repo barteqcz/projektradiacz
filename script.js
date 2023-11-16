@@ -1,33 +1,34 @@
-$(document).ready(function () {
-    $('.mobile, .desktop').on('click', '.playbtn', function () {
-        changePlayBtn(this);
-        playRadio(this);
+$(document).ready(function() {
+    $('.mobile, .desktop').on('click', '.playbtn', function() {
+        const clickedButton = $(this);
+        changePlayBtn(clickedButton);
+        playRadio(clickedButton.data('radio-id'));
     });
 
     const noStationsFoundDesktop = $('#noStationsFoundDesktop');
     const noStationsFoundMobile = $('#noStationsFoundMobile');
 
-    $('audio').each(function () {
+    $('audio').each(function() {
         this.src += '?cachebust=' + (+new Date());
     });
 
-    $('.searchbar').on('input', function () {
+    $('.searchbar').on('input', function() {
         const searchTerm = normalizeString($(this).val());
         let stationsFound = false;
 
-        $('.box').each(function () {
+        $('.box').each(function() {
             const radioName = normalizeString($(this).find('h1').text());
 
-            if (radioName.includes(searchTerm)) {
-                $(this).css('display', 'flex');
+            const displayStyle = radioName.includes(searchTerm) ? 'flex' : 'none';
+            $(this).css('display', displayStyle);
+
+            if (displayStyle === 'flex') {
                 stationsFound = true;
-            } else {
-                $(this).css('display', 'none');
             }
         });
 
-        noStationsFoundDesktop.css('display', stationsFound ? 'none' : 'block');
-        noStationsFoundMobile.css('display', stationsFound ? 'none' : 'block');
+        noStationsFoundDesktop.toggle(!stationsFound);
+        noStationsFoundMobile.toggle(!stationsFound);
     });
 });
 
@@ -43,7 +44,7 @@ function playRadio(audioId) {
 }
 
 function changePlayBtn(clickedButton) {
-    $(clickedButton).toggleClass("fa-play fa-pause");
+    clickedButton.toggleClass("fa-play fa-pause");
 }
 
 function normalizeString(str) {
