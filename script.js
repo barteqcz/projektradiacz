@@ -39,7 +39,7 @@ function playRadio(audioId) {
         audio.play();
     } else {
         audio.pause();
-        location.reload(true);
+        audio.src = audio.src + '?cachebust=' + new Date();
     }
 }
 
