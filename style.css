@@ -24,7 +24,7 @@ a {
 }
 
 .taskbar-icons {
-    margin-left: 20px;
+    padding-left: 20px;
     color: #ffffff;
 }
 
@@ -76,10 +76,6 @@ a {
 
 .icon-right {
     float: right;
-}
-
-.fa-size-40 {
-    font-size: 40px;
 }
 
 /* Responsive styles */
