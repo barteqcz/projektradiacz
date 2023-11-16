@@ -101,6 +101,11 @@ a {
     float: right;
 }
 
+/* Styles for footer */
+.footer {
+    height: 30px;
+}
+
 /* Responsive styles */
 @media (max-width: 767px) {
     .desktop {
