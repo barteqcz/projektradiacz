@@ -58,7 +58,7 @@ function setAudioSource() {
     const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     const isFirefoxNightly = /Nightly/.test(navigator.userAgent);
 
-    if (isChrome) {
+    if (isChrome && isFirefoxNightly) {
         rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust' + new Date();
         rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust' + new Date();
         rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3' + '?cachebust' + new Date();
