@@ -65,10 +65,9 @@ function setAudioSource() {
     const rzurnal = document.getElementById('rzurnal');
     const rdvojka = document.getElementById('rdvojka');
     const rvltava = document.getElementById('rvltava');
-
-    const audioTestingElement = new Audio();
-
-    if (audioTestingElement.canPlayType('audio/ogg') !== '') {
+    const isChromium = /Chrom(e|ium)/.test(navigator.userAgent);
+    
+    if (isChromium) {
         rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust=' + new Date();
         rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg' + '?cachebust=' + new Date();
         rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust=' + new Date();
