@@ -66,6 +66,7 @@ function setAudioSource() {
     const rdvojka = document.getElementById('rdvojka');
     const rvltava = document.getElementById('rvltava');
     const isChromium = /Chrom(e|ium)/.test(navigator.userAgent);
+    console.log(isChromium);
     
     if (isChromium) {
         rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust=' + new Date();
