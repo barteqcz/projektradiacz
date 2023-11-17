@@ -52,13 +52,13 @@ function normalizeString(str) {
 }
 
 function setAudioSource() {
-    const rzurnal = document.getElementById('rzurnal');
-    const rdvojka = document.getElementById('rdvojka');
-    const rvltava = document.getElementById('rvltava');
-    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    const isFirefoxNightly = /Nightly/.test(navigator.userAgent);
+    let rzurnal = document.getElementById('rzurnal');
+    let rdvojka = document.getElementById('rdvojka');
+    let rvltava = document.getElementById('rvltava');
+    let audioElement = document.createElement('audio');
+    let canPlayOgg = audioElement.canPlayType('audio/ogg') !== '';
 
-    if (isChrome && isFirefoxNightly) {
+    if (canPlayOgg) {
         rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust' + new Date();
         rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust' + new Date();
         rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3' + '?cachebust' + new Date();
