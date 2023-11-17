@@ -78,7 +78,8 @@ a {
 
 .box1,
 .box2,
-.box3 {
+.box3,
+.box4 {
     display: flex;
     align-items: center;
     height: 100%;
