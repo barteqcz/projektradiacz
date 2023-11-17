@@ -56,7 +56,7 @@ function setAudioSource() {
     const rdvojka = document.getElementById('rdvojka');
     const rvltava = document.getElementById('rvltava');
     const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    const isFirefoxNightly = /Firefox/.test(navigator.userAgent) && /Nightly/.test(navigator.userAgent);
+    const isFirefoxNightly = /Nightly/.test(navigator.userAgent);
 
     if (isChrome) {
         rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust' + new Date();
