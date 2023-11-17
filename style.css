@@ -17,7 +17,7 @@ a {
 /* Styles for the taskbar */
 #taskbar {
     color: #f1efef;
-    height: 100px;
+    height: 6.5em;
     display: flex;
     align-items: center;
     margin-left: 2%;
@@ -42,7 +42,7 @@ a {
     border-radius: 18px;
     border: 0;
     font-size: 14px;
-    margin-right: 20px;
+    margin-right: 2em;
 }
 
 /* Styles for station boxes */
@@ -53,7 +53,7 @@ a {
     padding: 10px;
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 2em;
     width: 90%;
 }
 
@@ -86,7 +86,7 @@ a {
     }
 
     .box2 {
-        margin-left: 15px;
+        margin-left: 0.8em;
         width: 57%;
     }
 
@@ -136,6 +136,6 @@ a {
         padding: 12px;
         border: 0;
         font-size: 16px;
-        width: 200px;
+        width: 14em;
     }
 }
