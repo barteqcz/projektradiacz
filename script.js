@@ -66,15 +66,14 @@ function setAudioSource() {
     const rdvojka = document.getElementById('rdvojka');
     const rvltava = document.getElementById('rvltava');
     const isChromium = /Chrom(e|ium)/.test(navigator.userAgent);
-    console.log(isChromium);
     
     if (isChromium) {
-        rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust=' + new Date();
-        rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg' + '?cachebust=' + new Date();
-        rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust=' + new Date();
-    } else {
         rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust=' + new Date();
         rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust=' + new Date();
         rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3' + '?cachebust=' + new Date();
+    } else {
+        rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust=' + new Date();
+        rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg' + '?cachebust=' + new Date();
+        rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust=' + new Date();
     }
 }
