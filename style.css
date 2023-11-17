@@ -17,11 +17,11 @@ a {
 /* Styles for the taskbar */
 #taskbar {
     color: #f1efef;
-    height: 6.5em;
     display: flex;
     align-items: center;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .taskbar-icons {
@@ -29,11 +29,29 @@ a {
     font-size: 40px;
 }
 
-/* Common styles for both mobile and desktop */
+/* Common styles */
 .stations {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#noStationsFound {
+    display: none;
+    text-align: center;
+    color: red;
+    margin-top: 20%;
+    font-size: 24px;
+}
+
+.btn {
+    color: #ffffff;
+    border-radius: 18px;
+    background-color: #000000;
+    padding: 12px;
+    border: 0;
+    font-size: 16px;
+    width: 200px;
 }
 
 /* Styles for search bar */
@@ -43,7 +61,7 @@ a {
     border-radius: 18px;
     border: 0;
     font-size: 14px;
-    margin-right: 2em;
+    margin-right: 20px;
 }
 
 /* Styles for station boxes */
@@ -54,14 +72,13 @@ a {
     padding: 10px;
     display: flex;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 40px;
     width: 90%;
 }
 
 .box1,
 .box2,
-.box3,
-.box4 {
+.box3 {
     display: flex;
     align-items: center;
     height: 100%;
@@ -69,7 +86,7 @@ a {
 
 /* Styles for footer */
 .footer {
-    height: 2.5em;
+    height: 30px;
 }
 
 /* Helper classes styles */
@@ -82,22 +99,16 @@ a {
 }
 
 /* Responsive styles */
+/* Mobile */
 @media (max-width: 767px) {
     h1 {
         font-size: 24px;
     }
 
     .box2 {
-        margin-left: 0.8em;
-        width: 57%;
-    }
-
-    #noStationsFound {
-        display: none;
-        text-align: center;
-        color: red;
-        margin-top: 20%;
-        font-size: 24px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 55%;
     }
 
     .fa-custom-size {
@@ -109,9 +120,11 @@ a {
     }
 }
 
+/* Desktop */
 @media (min-width: 767px) {
     .box2 {
-        margin-left: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         width: 45%;
     }
 
@@ -119,25 +132,8 @@ a {
         width: 60%;
     }
 
-    #noStationsFound {
-        display: none;
-        text-align: center;
-        color: red;
-        margin-top: 20%;
-        font-size: 24px;
-    }
-
     .fa-custom-size {
         font-size: 64px;
     }
 
-    .btn {
-        color: #ffffff;
-        border-radius: 18px;
-        background-color: #000000;
-        padding: 12px;
-        border: 0;
-        font-size: 16px;
-        width: 14em;
-    }
 }
