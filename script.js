@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     $('.searchbar').on('input', function() {
         const searchTerm = normalizeString($(this).val());
-        let stationsFound = false;
+        const stationsFound = false;
 
         $('.box').each(function() {
             const radioName = normalizeString($(this).find('h1').text());
@@ -52,11 +52,11 @@ function normalizeString(str) {
 }
 
 function setAudioSource() {
-    let rzurnal = document.getElementById('rzurnal');
-    let rdvojka = document.getElementById('rdvojka');
-    let rvltava = document.getElementById('rvltava');
-    let audioElement = document.createElement('audio');
-    let canPlayOgg = audioElement.canPlayType('audio/ogg') !== '';
+    const rzurnal = document.getElementById('rzurnal');
+    const rdvojka = document.getElementById('rdvojka');
+    const rvltava = document.getElementById('rvltava');
+    const audioElement = document.createElement('audio');
+    const canPlayOgg = audioElement.canPlayType('audio/ogg') !== '';
 
     if (canPlayOgg) {
         rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust' + new Date();
