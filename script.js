@@ -1,39 +1,43 @@
-$(document).ready(function() {
-    $('body').on('click', '.playbtn', function() {
-        const clickedButton = $(this);
-        changePlayBtn(clickedButton);
-        playRadio(clickedButton.data('radio-id'));
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (event) {
+        const clickedElement = event.target;
+
+        if (clickedElement.classList.contains('playbtn')) {
+            const clickedButton = clickedElement;
+            changePlayBtn(clickedButton);
+            playRadio(clickedButton.getAttribute('data-radio-id'));
+        }
     });
 
-    const noStationsFound = $('#noStationsFound');
+    const noStationsFound = document.getElementById('noStationsFound');
 
-    $('audio').each(function() {
-        this.src = this.src + '?cachebust=' + new Date();
+    document.querySelectorAll('audio').forEach(function (audio) {
+        audio.src = audio.src + '?cachebust=' + new Date();
     });
 
-    $('.searchbar').on('input', function() {
-        const searchTerm = normalizeString($(this).val());
-        const stationsFound = false;
+    document.querySelector('.searchbar').addEventListener('input', function () {
+        const searchTerm = normalizeString(this.value);
+        let stationsFound = false;
 
-        $('.box').each(function() {
-            const radioName = normalizeString($(this).find('h1').text());
+        document.querySelectorAll('.box').forEach(function (box) {
+            const radioName = normalizeString(box.querySelector('h1').textContent);
 
             const displayStyle = radioName.includes(searchTerm) ? 'flex' : 'none';
-            $(this).css('display', displayStyle);
+            box.style.display = displayStyle;
 
             if (displayStyle === 'flex') {
                 stationsFound = true;
             }
         });
 
-        noStationsFound.toggle(!stationsFound);
+        noStationsFound.style.display = stationsFound ? 'none' : 'block';
     });
 
     setAudioSource();
 });
 
 function playRadio(audioId) {
-    const audio = $('#' + audioId)[0];
+    const audio = document.getElementById(audioId);
 
     if (audio.paused) {
         audio.play();
@@ -44,7 +48,13 @@ function playRadio(audioId) {
 }
 
 function changePlayBtn(clickedButton) {
-    clickedButton.toggleClass("fa-play fa-pause");
+    if (clickedButton.classList.contains('fa-play')) {
+        clickedButton.classList.remove('fa-play');
+        clickedButton.classList.add('fa-pause');
+    } else {
+        clickedButton.classList.remove('fa-pause');
+        clickedButton.classList.add('fa-play');
+    }
 }
 
 function normalizeString(str) {
@@ -59,12 +69,12 @@ function setAudioSource() {
     const canPlayOgg = audioElement.canPlayType('audio/ogg') !== '';
 
     if (canPlayOgg) {
-        rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust' + new Date();
-        rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg' + '?cachebust' + new Date();
-        rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust' + new Date();
+        rzurnal.src = 'http://amp.cesnet.cz:8000/cro1-256.ogg' + '?cachebust=' + new Date();
+        rdvojka.src = 'http://amp.cesnet.cz:8000/cro2-256.ogg' + '?cachebust=' + new Date();
+        rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust=' + new Date();
     } else {
-        rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust' + new Date();
-        rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust' + new Date();
-        rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3' + '?cachebust' + new Date();
+        rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust=' + new Date();
+        rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust=' + new Date();
+        rvltava.src = 'https://rozhlas.stream/vltava_mp3_256.mp3' + '?cachebust=' + new Date();
     }
 }
