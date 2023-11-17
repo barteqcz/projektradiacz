@@ -13,13 +13,14 @@ a {
     text-decoration: none;
 }
 
+
 /* Styles for the taskbar */
 #taskbar {
     color: #f1efef;
     height: 100px;
     display: flex;
     align-items: center;
-    margin-left: 2%; /* Consider using a percentage or other relative units */
+    margin-left: 2%;
 }
 
 .taskbar-icons {
@@ -36,7 +37,7 @@ a {
 
 /* Styles for search bar */
 .searchbar {
-    width: 70%; /* Consider using a percentage */
+    width: 70%;
     padding: 15px;
     border-radius: 18px;
     border: 0;
@@ -66,7 +67,7 @@ a {
 
 /* Styles for footer */
 .footer {
-    height: 2.5em; /* Adjusted height with relative unit */
+    height: 2.5em;
 }
 
 /* Helper classes styles */
@@ -81,12 +82,12 @@ a {
 /* Responsive styles */
 @media (max-width: 767px) {
     h1 {
-        font-size: 1.5em; /* Adjusted font size with relative unit */
+        font-size: 24px;
     }
 
     .box2 {
         margin-left: 15px;
-        width: 55%; /* Adjusted width */
+        width: 57%;
     }
 
     #noStationsFound {
@@ -102,20 +103,18 @@ a {
     }
 
     .btn {
-        opacity: 0;
-        pointer-events: none; /* Disable clicks on hidden button */
-        transition: opacity 0.3s ease; /* Add a transition effect */
+        display: none;
     }
 }
 
 @media (min-width: 767px) {
     .box2 {
         margin-left: 20px;
-        width: 45%; /* Adjusted width */
+        width: 45%;
     }
 
     .box3 {
-        width: 65%; /* Adjusted width */
+        width: 60%;
     }
 
     #noStationsFound {
@@ -138,7 +137,5 @@ a {
         border: 0;
         font-size: 16px;
         width: 200px;
-        opacity: 1;
-        transition: opacity 0.3s ease; /* Add a transition effect */
     }
 }
