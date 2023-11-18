@@ -80,17 +80,11 @@ function setAudioSource() {
 
 function toggleMode() {
     const body = document.body;
+    body.classList.toggle('dark-mode');
     const toggleOn = document.querySelector('.fa-toggle-on');
     const toggleOff = document.querySelector('.fa-toggle-off');
-    
-    // Check if there is a theme stored in local storage
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-    // Toggle the dark mode class based on the stored preference
-    body.classList.toggle('dark-mode', isDarkMode);
-
-    // Update the toggle button display
-    if (isDarkMode) {
+    if (body.classList.contains('dark-mode')) {
         toggleOn.style.display = 'inline-block';
         toggleOff.style.display = 'none';
     } else {
@@ -98,22 +92,3 @@ function toggleMode() {
         toggleOff.style.display = 'inline-block';
     }
 }
-
-// Function to save the theme preference to local storage
-function saveThemePreference() {
-    const body = document.body;
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-}
-
-// Call the saveThemePreference function whenever the theme is toggled
-document.addEventListener('DOMContentLoaded', function () {
-    toggleMode(); // Set the initial theme based on local storage
-    document.addEventListener('click', function (event) {
-        const target = event.target;
-        if (target.classList.contains('fa-toggle-on') || target.classList.contains('fa-toggle-off')) {
-            toggleMode();
-            saveThemePreference();
-        }
-    });
-});
