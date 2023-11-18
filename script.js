@@ -98,5 +98,6 @@ function toggleMode() {
             toggleBtn.classList.add('fa-toggle-off');
         }
     });
+    
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 }
