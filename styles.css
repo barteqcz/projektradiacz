@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: #000000;
+    background-color: #fffbff;
     margin: 0;
 }
 
@@ -13,10 +13,9 @@ a {
     text-decoration: none;
 }
 
-
 /* Styles for the taskbar */
 #taskbar {
-    color: #f1efef;
+    color: #353541;
     display: flex;
     align-items: center;
     margin-top: 20px;
@@ -25,8 +24,12 @@ a {
 }
 
 .taskbar-icons {
-    color: #ffffff;
+    color: #353541;
     font-size: 40px;
+}
+
+.toggle-animation {
+    animation: fadeInOut 0.5s;
 }
 
 /* Common styles */
@@ -45,9 +48,9 @@ a {
 }
 
 .btn {
-    color: #ffffff;
+    color: #fffbff;
     border-radius: 18px;
-    background-color: #000000;
+    background-color: #353541;
     padding: 12px;
     border: 0;
     font-size: 16px;
@@ -56,6 +59,7 @@ a {
 
 /* Styles for search bar */
 .searchbar {
+    background-color: #e5e0e4;
     width: 70%;
     padding: 15px;
     border-radius: 18px;
@@ -66,9 +70,9 @@ a {
 
 /* Styles for station boxes */
 .box {
-    color: #000000;
+    color: #353541;
     border-radius: 15px;
-    background-color: #dbdbdb;
+    background-color: #e8e6ec;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -97,6 +101,59 @@ a {
 
 .icon-right {
     float: right;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #1c1b20;
+    color: #fffbff;
+}
+
+.dark-mode .searchbar {
+    background-color: #343338;
+    color: #fffbff;
+    width: 70%;
+    padding: 15px;
+    border-radius: 18px;
+    border: 0;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.dark-mode .box {
+    color: #fffbff;
+    border-radius: 15px;
+    background-color: #3e3e3f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.dark-mode .btn {
+    background-color: #1c1b20;
+    color: #fffbff;
+}
+
+.dark-mode .fa-toggle-on {
+    display: inline-block;
+    color: #fffbff;
+}
+
+.dark-mode .fa-toggle-off {
+    display: none;
+}
+
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Responsive styles */
@@ -136,5 +193,4 @@ a {
     .fa-custom-size {
         font-size: 64px;
     }
-
 }

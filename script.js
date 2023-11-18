@@ -77,3 +77,18 @@ function setAudioSource() {
         rvltava.src = 'http://amp.cesnet.cz:8000/cro3-256.ogg' + '?cachebust=' + new Date();
     }
 }
+
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const toggleOn = document.querySelector('.fa-toggle-on');
+    const toggleOff = document.querySelector('.fa-toggle-off');
+    
+    if (body.classList.contains('dark-mode')) {
+        toggleOn.style.display = 'inline-block';
+        toggleOff.style.display = 'none';
+    } else {
+        toggleOn.style.display = 'none';
+        toggleOff.style.display = 'inline-block';
+    }
+}
