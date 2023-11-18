@@ -28,10 +28,6 @@ a {
     font-size: 40px;
 }
 
-.toggle-animation {
-    animation: fadeInOut 0.5s;
-}
-
 /* Common styles */
 .stations {
     display: flex;
@@ -143,17 +139,6 @@ a {
 
 .dark-mode .fa-toggle-off {
     display: none;
-}
-
-@keyframes fadeInOut {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* Responsive styles */
