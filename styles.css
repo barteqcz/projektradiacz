@@ -132,20 +132,14 @@ a {
     color: #fffbff;
 }
 
-.dark-mode .dark-mode-toggle.on {
-    display: inline-block;
-}
-
+.dark-mode .dark-mode-toggle.on,
 .dark-mode .dark-mode-toggle.off {
     display: none;
 }
 
-.dark-mode .dark-mode-toggle.on ~ .dark-mode-toggle.off {
-    display: inline-block;
-}
-
+.dark-mode .dark-mode-toggle.on ~ .dark-mode-toggle.off,
 .dark-mode .dark-mode-toggle.off ~ .dark-mode-toggle.on {
-    display: none;
+    display: inline-block;
 }
 
 /* Responsive styles */
