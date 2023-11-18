@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    // Apply dark mode if the user had it enabled
+    if (isDarkMode) {
+        toggleMode();
+    }
     document.body.addEventListener('click', function (event) {
         const clickedElement = event.target;
 
@@ -92,4 +98,5 @@ function toggleMode() {
             toggleBtn.classList.add('fa-toggle-off');
         }
     });
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 }
