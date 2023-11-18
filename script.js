@@ -81,10 +81,15 @@ function setAudioSource() {
 function toggleMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
-    const toggleButtons = document.querySelectorAll('.dark-mode-toggle');
+    const toggleBtn = document.querySelectorAll('.toggle-btn');
 
-    toggleButtons.forEach(button => {
-        button.classList.toggle('on');
-        button.classList.toggle('off');
+    toggleBtn.forEach(function(toggleBtn) {
+        if (body.classList.contains('dark-mode')) {
+            toggleBtn.classList.add('fa-toggle-on');
+            toggleBtn.classList.remove('fa-toggle-off');
+        } else {
+            toggleBtn.classList.remove('fa-toggle-on');
+            toggleBtn.classList.add('fa-toggle-off');
+        }
     });
 }
