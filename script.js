@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
     if (isDarkMode) {
         toggleMode();
     }
-    document.body.addEventListener('click', function (event) {
+    document.body.addEventListener('click', function(event) {
         const clickedElement = event.target;
 
         if (clickedElement.classList.contains('playbtn')) {
@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const noStationsFound = document.getElementById('noStationsFound');
 
-    document.querySelectorAll('audio').forEach(function (audio) {
+    document.querySelectorAll('audio').forEach(function(audio) {
         audio.src = audio.src + '?cachebust=' + new Date();
     });
 
-    document.querySelector('.searchbar').addEventListener('input', function () {
+    document.querySelector('.searchbar').addEventListener('input', function() {
         const searchTerm = normalizeString(this.value);
         let stationsFound = false;
 
-        document.querySelectorAll('.box').forEach(function (box) {
+        document.querySelectorAll('.box').forEach(function(box) {
             const radioName = normalizeString(box.querySelector('h1').textContent);
 
             const displayStyle = radioName.includes(searchTerm) ? 'flex' : 'none';
@@ -71,7 +71,7 @@ function setAudioSource() {
     const rdvojka = document.getElementById('rdvojka');
     const rvltava = document.getElementById('rvltava');
     const isChromium = /Chrom(e|ium)/.test(navigator.userAgent);
-    
+
     if (isChromium) {
         rzurnal.src = 'https://rozhlas.stream/radiozurnal_mp3_128.mp3' + '?cachebust=' + new Date();
         rdvojka.src = 'https://rozhlas.stream/dvojka_mp3_128.mp3' + '?cachebust=' + new Date();
@@ -97,6 +97,6 @@ function toggleMode() {
             toggleBtn.classList.add('fa-toggle-off');
         }
     });
-    
+
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 }
