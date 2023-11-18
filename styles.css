@@ -99,6 +99,7 @@ a {
     float: right;
 }
 
+
 /* Dark mode styles */
 .dark-mode {
     background-color: #1c1b20;
@@ -132,22 +133,8 @@ a {
     color: #fffbff;
 }
 
-.dark-mode .dark-mode-toggle.on,
-.dark-mode .dark-mode-toggle.off {
-    display: none;
-}
-
-.dark-mode .dark-mode-toggle.on ~ .dark-mode-toggle.off,
-.dark-mode .dark-mode-toggle.off ~ .dark-mode-toggle.on {
-    display: inline-block;
-}
-
-body:not(.dark-mode) .dark-mode-toggle.off {
-    display: inline-block;
-}
-
-body:not(.dark-mode) .dark-mode-toggle.on {
-    display: none;
+.dark-mode .toggle-btn {
+    color: #fffbff;
 }
 
 /* Responsive styles */
