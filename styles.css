@@ -132,12 +132,19 @@ a {
     color: #fffbff;
 }
 
-.dark-mode .fa-toggle-on {
+.dark-mode .dark-mode-toggle.on {
     display: inline-block;
-    color: #fffbff;
 }
 
-.dark-mode .fa-toggle-off {
+.dark-mode .dark-mode-toggle.off {
+    display: none;
+}
+
+.dark-mode .dark-mode-toggle.on ~ .dark-mode-toggle.off {
+    display: inline-block;
+}
+
+.dark-mode .dark-mode-toggle.off ~ .dark-mode-toggle.on {
     display: none;
 }
 
