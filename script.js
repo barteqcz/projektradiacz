@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-    // Apply dark mode if the user had it enabled
     if (isDarkMode) {
         toggleMode();
     }
