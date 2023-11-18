@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleMode(); // Set the initial theme based on local storage
     document.addEventListener('click', function (event) {
         const target = event.target;
-        if (target.classList.contains('toggle-button')) {
+        if (target.classList.contains('fa-toggle-on') || target.classList.contains('fa-toggle-off')) {
             toggleMode();
             saveThemePreference();
         }
