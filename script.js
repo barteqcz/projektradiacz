@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         noStationsFound.style.display = stationsFound ? 'none' : 'block';
     });
 
-    setAudioSource();
 });
 
 function playRadio(audioId) {
