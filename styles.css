@@ -38,7 +38,7 @@ a {
 #noStationsFound {
     display: none;
     text-align: center;
-    color: red;
+    color: #fc4242;
     margin-top: 20%;
     font-size: 24px;
 }
