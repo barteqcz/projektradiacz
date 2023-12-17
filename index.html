@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seznam českých radií</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <audio id="rzurnal" src="https://rozhlas.stream/radiozurnal_mp3_128.mp3" preload="none"></audio>
+        <audio id="rdvojka" src="https://rozhlas.stream/dvojka_mp3_128.mp3" preload="none"></audio>
+        <audio id="rvltava" src="https://rozhlas.stream/vltava_mp3_256.mp3" preload="none"></audio>
+        <audio id="rplus" src="https://rozhlas.stream/plus_mp3_128.mp3" preload="none"></audio>
+        <audio id="rpraha" src="https://rozhlas.stream/regina_mp3_128.mp3" preload="none"></audio>
+        <audio id="rbrno" src="https://rozhlas.stream/brno_mp3_128.mp3" preload="none"></audio>
+        <audio id="rostrava" src="https://rozhlas.stream/ostrava.mp3" preload="none"></audio>
+        <audio id="fajn" src="https://21293.live.streamtheworld.com/FAJN_RADIO_128.mp3" preload="none"></audio>
+        <audio id="hitradio-city-praha" src="https://25633.live.streamtheworld.com/HITRADIO_CITY_PRAHA_128.mp3" preload="none"></audio>
+        <audio id="hitradio-city-brno" src="https://ice.abradio.cz/citybrno128.mp3" preload="none"></audio>
+        <audio id="hitradio-orion" src="https://25643.live.streamtheworld.com/HITRADIO_ORION_128.mp3" preload="none"></audio>
+        <audio id="e2" src="https://ice.actve.net/fm-evropa2-128" preload="none"></audio>
+        <audio id="f1" src="https://ice.actve.net/fm-frekvence1-128" preload="none"></audio>
+        <audio id="blanik" src="https://25553.live.streamtheworld.com/RADIO_BLANIK_128.mp3" preload="none"></audio>
+        <audio id="kiss" src="https://icecast4.play.cz/kiss128.mp3" preload="none"></audio>
+        <audio id="rockradio" src="https://22193.live.streamtheworld.com/ROCK_RADIO_128.mp3" preload="none"></audio>
+        <audio id="impuls" src="https://icecast1.play.cz/impuls128.mp3" preload="none"></audio>
+        <audio id="beat" src="https://ice5.abradio.cz/beat128.mp3" preload="none"></audio>
+        <audio id="orlicko" src="https://server.radioorlicko.cz/stream192.mp3" preload="none"></audio>
+        <audio id="spin" src="https://ice5.abradio.cz/spin128.mp3" preload="none"></audio>
+        
+        <div id="taskbar">
+            <input type="text" class="searchbar" placeholder="Dočasně nedostupné" disabled>
+            <i class="fa-solid fa-toggle-off taskbar-icons toggle-btn" onclick="toggleMode()"></i>
+        </div>
+        
+        <div class="stations">
+            <div id="noStationsFound">Nebyly nalezeny žádné stanice</div>
+            <audio class="audioPlayer"></audio>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/rzurnal.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>ČRo Rádiožurnál</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rzurnal')"></i></div>
+                <div class="box4"><a href="https://radiozurnal.rozhlas.cz/" target="_blank"><div class="btn btn-link">radiozurnal.rozhlas.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/rdvojka.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>ČRo Dvojka</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rdvojka')"></i></div>
+                <div class="box4"><a href="https://dvojka.rozhlas.cz/" target="_blank"><div class="btn btn-link">dvojka.rozhlas.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/rvltava.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>ČRo Vltava</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rvltava')"></i></div>
+                <div class="box4"><a href="https://vltava.rozhlas.cz/" target="_blank"><div class="btn btn-link">vltava.rozhlas.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/rplus.png" width="100px" height="100px"></div>
+                <div class="box2"><h1>ČRo Plus</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rplus')"></i></div>
+                <div class="box4"><a href="https://plus.rozhlas.cz/" target="_blank"><div class="btn btn-link">plus.rozhlas.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1 box1-cro"><img src="imgs/cro.jpg" width="100px" height="100px" class="radio-logo"></div>
+                <div class="box2 box2-cro">
+                    <select id="cro-city" class="dropdown" onchange="updateOptionsCRo()">
+                        <option value="rpraha">ČRo Praha</option>
+                        <option value="rbrno">ČRo Brno</option>
+                        <option value="rostrava">ČRo Ostrava</option>
+                    </select> 
+                </div>
+                <div class="box3 box3-cro"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rpraha')"></i></div>
+                <div class="box4 box4-cro"><a href="https://praha.rozhlas.cz/" target="_blank" class="cro-href"><div class="btn btn-link">praha.rozhlas.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/fajn.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>Fajn Rádio</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('fajn')"></i></div>
+                <div class="box4"><a href="https://fajnradio.cz/" target="_blank"><div class="btn btn-link">fajnradio.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+        
+            <div class="box">
+                <div class="box1 box1-hitradio"><img src="imgs/city937.svg" width="100px" height="100px" class="radio-logo"></div>
+                <div class="box2 box2-hitradio">
+                    <select id="hitradio-city" class="dropdown" onchange="updateOptionsHitradio()">
+                        <option value="hitradio-city-praha">Hitrádio City (Praha)</option>
+                        <option value="hitradio-city-brno">Hitrádio City (Brno)</option>
+                        <option value="hitradio-orion">Hitrádio Orion</option>
+                    </select>
+                </div>
+                <div class="box3 box3-hitradio"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('hitradio-city-praha')"></i></div>
+                <div class="box4 box4-hitradio"><a href="https://hitradiocity.cz/" target="_blank" class="hitradio-href"><div class="btn btn-link">hitradiocity.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/e2.png" width="100px" height="100px"></div>
+                <div class="box2"><h1>Evropa 2</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('e2')"></i></div>
+                <div class="box4"><a href="https://evropa2.cz/" target="_blank"><div class="btn btn-link">evropa2.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/f1.png" width="100px" height="100px"></div>
+                <div class="box2"><h1>Frekvence 1</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('f1')"></i></div>
+                <div class="box4"><a href="https://frekvence1.cz/" target="_blank"><div class="btn btn-link">frekvence1.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/blanik.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Blaník</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('blanik')"></i></div>
+                <div class="box4"><a href="https://radioblanik.cz/" target="_blank"><div class="btn btn-link">radioblanik.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/kiss.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Kiss</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('kiss')"></i></div>
+                <div class="box4"><a href="https://kiss.cz/" target="_blank"><div class="btn btn-link">kiss.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/rockradio.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rock Rádio</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rockradio')"></i></div>
+                <div class="box4"><a href="https://rockovyradio.cz/" target="_blank"><div class="btn btn-link">rockovyradio.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="https://play-lh.googleusercontent.com/zrCIsaFmU5NFuHRtWtlc752ql6tnbUVx1jgqyT04aw2ZJSApbch3Y8aJ3R9gLGYQMhU" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Impuls</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('impuls')"></i></div>
+                <div class="box4"><a href="https://impuls.cz/" target="_blank"><div class="btn btn-link">impuls.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/beat.png" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Beat</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('beat')"></i></div>
+                <div class="box4"><a href="https://radiobeat.cz/" target="_blank"><div class="btn btn-link">radiobeat.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/orlicko.webp" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Orlicko</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('orlicko')"></i></div>
+                <div class="box4"><a href="https://radioorlicko.cz/" target="_blank"><div class="btn btn-link">radioorlicko.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+            
+            <div class="box">
+                <div class="box1"><img src="imgs/spin.svg" width="100px" height="100px"></div>
+                <div class="box2"><h1>Rádio Spin</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('spin')"></i></div>
+                <div class="box4"><a href="https://radiospin.cz/" target="_blank"><div class="btn btn-link">radiospin.cz &nbsp;<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+        </div>
+        
+        <div class="footer"></div>
+    </body>
+</html>
