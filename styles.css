@@ -175,6 +175,10 @@ a {
     .box4 {
         display: none;
     }
+    .box2-cro .box2-hitradio {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Desktop */
