@@ -25,18 +25,34 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.searchbar').addEventListener('input', function() {
         const searchTerm = normalizeString(this.value);
         let stationsFound = false;
-
+    
         document.querySelectorAll('.box').forEach(function(box) {
-            const radioName = normalizeString(box.querySelector('h1').textContent);
+            let elementToSearch = null;
 
-            const displayStyle = radioName.includes(searchTerm) ? 'flex' : 'none';
-            box.style.display = displayStyle;
+            const h1Element = box.querySelector('h1');
+            if (h1Element) {
+                elementToSearch = h1Element;
+            }
+    
+            if (!elementToSearch) {
+                const selectElement = box.querySelector('select');
+                if (selectElement) {
+                    elementToSearch = selectElement;
+                }
+            }
 
-            if (displayStyle === 'flex') {
-                stationsFound = true;
+            if (elementToSearch) {
+                const elementText = normalizeString(elementToSearch.textContent || elementToSearch.value);
+    
+                const displayStyle = elementText.includes(searchTerm) ? 'flex' : 'none';
+                box.style.display = displayStyle;
+    
+                if (displayStyle === 'flex') {
+                    stationsFound = true;
+                }
             }
         });
-
+    
         noStationsFound.style.display = stationsFound ? 'none' : 'block';
     });
 
