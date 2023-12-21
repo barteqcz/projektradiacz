@@ -17,6 +17,10 @@ a {
     cursor: not-allowed;
 }
 
+.p-dropdown-box {
+    margin-top: -2px
+}
+
 /* Styles for the taskbar */
 #taskbar {
     color: #353541;
@@ -89,6 +93,16 @@ a {
     height: 100%;
 }
 
+.dropdown {
+    color: #fffbff;
+    border-radius: 18px;
+    background-color: #353541;
+    padding: 12px;
+    border: 0;
+    font-size: 16px;
+    width: 200px;
+}
+
 /* Styles for footer */
 .footer {
     height: 30px;
@@ -101,16 +115,6 @@ a {
 
 .icon-right {
     float: right;
-}
-
-.dropdown {
-    color: #fffbff;
-    border-radius: 18px;
-    background-color: #353541;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-    width: 200px;
 }
 
 /* Dark mode styles */
@@ -168,6 +172,15 @@ a {
         width: 52%;
     }
 
+    .box2-cro, .box2-hitradio {
+        flex-direction: column;
+    }
+
+    .dropdown {
+        width: 150px;
+        font-size: 12px;
+    }
+
     .fa-custom-size {
         font-size: 50px;
     }
@@ -175,10 +188,7 @@ a {
     .box4 {
         display: none;
     }
-    .box2-cro .box2-hitradio {
-        display: flex;
-        flex-direction: column;
-    }
+    
 }
 
 /* Desktop */
