@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('audio').forEach(function (otherAudio) {
             if (otherAudio.id !== audioId) {
                 otherAudio.pause();
+                otherAudio.src = otherAudio.src + '?cachebust=' + new Date();
                 const otherPlayBtn = document.querySelector(`.playbtn[data-radio-id="${otherAudio.id}"]`);
                 if (otherPlayBtn) {
                     otherPlayBtn.classList.remove('fa-pause');
