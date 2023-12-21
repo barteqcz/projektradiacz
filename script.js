@@ -192,6 +192,7 @@ function updateOptionsHitradio() {
             let allAudioElements = document.querySelectorAll('audio');
             allAudioElements.forEach(audio => {
                 audio.pause();
+                audio.src = audio.src + '?cachebust=' + new Date();
             });
         }
     }
