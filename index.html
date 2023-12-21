@@ -13,13 +13,31 @@
         <audio id="rdvojka" src="https://rozhlas.stream/dvojka_mp3_128.mp3" preload="none"></audio>
         <audio id="rvltava" src="https://rozhlas.stream/vltava_mp3_256.mp3" preload="none"></audio>
         <audio id="rplus" src="https://rozhlas.stream/plus_mp3_128.mp3" preload="none"></audio>
-        <audio id="rpraha" src="https://rozhlas.stream/regina_mp3_128.mp3" preload="none"></audio>
+        <audio id="rpraha" src="https://rozhlas.stream/radio_dab_praha_high.aac" preload="none"></audio>
         <audio id="rbrno" src="https://rozhlas.stream/brno_mp3_128.mp3" preload="none"></audio>
-        <audio id="rostrava" src="https://rozhlas.stream/ostrava.mp3" preload="none"></audio>
+        <audio id="rostrava" src="https://rozhlas.stream/ostrava_high.aac" preload="none"></audio>
+        <audio id="rolomouc" src="https://rozhlas.stream/olomouc_high.aac" preload="none"></audio>
+        <audio id="rcb" src="https://rozhlas.stream/ceske_budejovice_high.aac" preload="none"></audio>
+        <audio id="rhk" src="https://rozhlas.stream/hradec_kralove_high.aac" preload="none"></audio>
+        <audio id="rkv" src="https://rozhlas.stream/karlovy_vary_high.aac" preload="none"></audio>
+        <audio id="rliberec" src="https://rozhlas.stream/liberec_high.aac" preload="none"></audio>
+        <audio id="rpardubice" src="https://rozhlas.stream/pardubice_high.aac" preload="none"></audio>
+        <audio id="rplzen" src="https://rozhlas.stream/plzen_high.aac" preload="none"></audio>
+        <audio id="rregion" src="https://rozhlas.stream/region_high.aac" preload="none"></audio>
+        <audio id="rsever" src="https://rozhlas.stream/sever_high.aac" preload="none"></audio>
+        <audio id="rvysocina" src="https://rozhlas.stream/vysocina_high.aac" preload="none"></audio>
+        <audio id="rzlin" src="https://rozhlas.stream/zlin_high.aac" preload="none"></audio>
         <audio id="fajn" src="https://21293.live.streamtheworld.com/FAJN_RADIO_128.mp3" preload="none"></audio>
         <audio id="hitradio-city-praha" src="https://25633.live.streamtheworld.com/HITRADIO_CITY_PRAHA_128.mp3" preload="none"></audio>
         <audio id="hitradio-city-brno" src="https://ice.abradio.cz/citybrno128.mp3" preload="none"></audio>
         <audio id="hitradio-orion" src="https://25643.live.streamtheworld.com/HITRADIO_ORION_128.mp3" preload="none"></audio>
+        <audio id="hitradio-contact" src="https://ice3.abradio.cz/hitradiocontact128.mp3" preload="none"></audio>
+        <audio id="hitradio-cernahora" src="https://ice.abradio.cz/cernahora128.mp3" preload="none"></audio>
+        <audio id="hitradio-faktor" src="https://22333.live.streamtheworld.com/HITRADIO_FAKTOR_128.mp3" preload="none"></audio>
+        <audio id="hitradio-fmplus" src="https://23543.live.streamtheworld.com/HITRADIO_FMPLUS_128.mp3" preload="none"></audio>
+        <audio id="hitradio-northmusic" src="https://ice.abradio.cz/hitradionorthmusic128.mp3" preload="none"></audio>
+        <audio id="hitradio-vysocina" src="https://25683.live.streamtheworld.com/HITRADIO_VYSOCINA.aac" preload="none"></audio>
+        <audio id="hitradio-zlin" src="https://ice.abradio.cz/radiozlin128.mp3" preload="none"></audio>
         <audio id="e2" src="https://ice.actve.net/fm-evropa2-128" preload="none"></audio>
         <audio id="f1" src="https://ice.actve.net/fm-frekvence1-128" preload="none"></audio>
         <audio id="blanik" src="https://25553.live.streamtheworld.com/RADIO_BLANIK_128.mp3" preload="none"></audio>
@@ -68,12 +86,23 @@
             </div>
             
             <div class="box">
-                <div class="box1 box1-cro"><img src="imgs/cro.jpg" class="radio-logo"></div>
+                <div class="box1 box1-cro"><img src="imgs/cropraha.png" class="radio-logo"></div>
                 <div class="box2 box2-cro">
                     <select id="cro-city" class="dropdown" onchange="updateOptionsCRo()">
                         <option value="rpraha">ČRo Praha</option>
                         <option value="rbrno">ČRo Brno</option>
                         <option value="rostrava">ČRo Ostrava</option>
+                        <option value="rolomouc">ČRo Olomouc</option>
+                        <option value="rcb">ČRo České Budějovice</option>
+                        <option value="rhk">ČRo Hradec Králové</option>
+                        <option value="rkv">ČRo Karlovy Vary</option>
+                        <option value="rliberec">ČRo Liberec</option>
+                        <option value="rpardubice">ČRo Pardubice</option>
+                        <option value="rplzen">ČRo Plzeň</option>
+                        <option value="rregion">ČRo Region</option>
+                        <option value="rsever">ČRo Sever</option>
+                        <option value="rvysocina">ČRo Vysočina</option>
+                        <option value="rzlin">ČRo Zlín</option>
                     </select> 
                 </div>
                 <div class="box3 box3-cro"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('rpraha')" data-radio-id="rpraha"></i></div>
@@ -94,6 +123,13 @@
                         <option value="hitradio-city-praha">Hitrádio City (Praha)</option>
                         <option value="hitradio-city-brno">Hitrádio City (Brno)</option>
                         <option value="hitradio-orion">Hitrádio Orion</option>
+                        <option value="hitradio-contact">Hitrádio Contact</option>
+                        <option value="hitradio-cernahora">Hitrádio Černá Hora</option>
+                        <option value="hitradio-faktor">Hitrádio Faktor</option>
+                        <option value="hitradio-fmplus">Hitrádio FM Plus</option>
+                        <option value="hitradio-northmusic">Hitrádio North Music</option>
+                        <option value="hitradio-vysocina">Hitrádio Vysočina</option>
+                        <option value="hitradio-zlin">Hitrádio Zlín</option>
                     </select>
                 </div>
                 <div class="box3 box3-hitradio"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('hitradio-city-praha')" data-radio-id="hitradio-city-praha"></i></div>
@@ -147,6 +183,13 @@
                 <div class="box2"><h1>Rádio Beat</h1></div>
                 <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('beat')" data-radio-id="beat"></i></div>
                 <div class="box4"><a href="https://radiobeat.cz/" target="_blank"><div class="btn btn-link">radiobeat.cz<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
+            </div>
+
+            <div class="box">
+                <div class="box1"><img src="imgs/country.png" class="radio-logo"></div>
+                <div class="box2"><h1>Country Rádio</h1></div>
+                <div class="box3"><i class="fa-solid fa-play fa-custom-size playbtn" onclick="playRadio('country')" data-radio-id="country"></i></div>
+                <div class="box4"><a href="https://countryradio.cz/" target="_blank"><div class="btn btn-link">countryradio.cz<i class="fa-solid fa-arrow-up-right-from-square icon-right"></i></div></a></div>
             </div>
             
             <div class="box">
