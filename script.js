@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (citySelectValue == "rpraha") {
             linkBtn.innerHTML = "praha.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('rpraha')");
+            playBtn.setAttribute("data-radio-id", "rpraha");
             hrefLink.href = "https://praha.rozhlas.cz/";
             radioLogo.src = 'imgs/cro.jpg';
         }
@@ -136,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (citySelectValue == "rbrno") {
             linkBtn.innerHTML = "brno.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('rbrno')");
+            playBtn.setAttribute("data-radio-id", "rbrno");
             hrefLink.href = "https://brno.rozhlas.cz/";
             radioLogo.src = 'imgs/crobrno.webp';
         }
@@ -143,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (citySelectValue == "rostrava") {
             linkBtn.innerHTML = "ostrava.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('rostrava')");
+            playBtn.setAttribute("data-radio-id", "rostrava");
             hrefLink.href = "https://ostrava.rozhlas.cz/";
             radioLogo.src = 'imgs/croostrava.png';
         }
@@ -153,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let allAudioElements = document.querySelectorAll('audio');
             allAudioElements.forEach(audio => {
                 audio.pause();
+                audio.src = audio.src + '?cachebust=' + new Date();
             });
         }
     }
@@ -184,7 +188,7 @@ function updateOptionsHitradio() {
         else if (citySelectValue == "hitradio-orion") {
             linkBtn.innerHTML = "hitradioorion.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('hitradio-orion')");
-            playBtn.setAttribute("data-radio-id", "hitradio-city-orion");
+            playBtn.setAttribute("data-radio-id", "hitradio-orion");
             radioLogo.src = 'imgs/orion.svg';
             hrefLink.href = "https://hitradioorion.cz/";
         }
