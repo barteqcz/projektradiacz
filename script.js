@@ -57,6 +57,63 @@ document.addEventListener('DOMContentLoaded', function () {
         noStationsFound.style.display = stationsFound ? 'none' : 'block';
     });
 
+    function playRadio(audioId) {
+        const audio = document.getElementById(audioId);
+
+        document.querySelectorAll('audio').forEach(function (otherAudio) {
+            if (otherAudio.id !== audioId) {
+                otherAudio.pause();
+                otherAudio.src = otherAudio.src + '?cachebust=' + new Date();
+                const otherPlayBtn = document.querySelector(`.playbtn[data-radio-id="${otherAudio.id}"]`);
+                if (otherPlayBtn) {
+                    otherPlayBtn.classList.remove('fa-pause');
+                    otherPlayBtn.classList.add('fa-play');
+                }
+            }
+        });
+
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+            audio.src = audio.src + '?cachebust=' + new Date();
+            const playBtn = document.querySelector(`.playbtn[data-radio-id="${audioId}"]`);
+            if (playBtn) {
+                playBtn.classList.remove('fa-pause');
+                playBtn.classList.add('fa-play');
+            }
+        }
+    }
+
+    function changePlayBtn(clickedButton) {
+        if (clickedButton.classList.contains('fa-play')) {
+            clickedButton.classList.remove('fa-play');
+            clickedButton.classList.add('fa-pause');
+        } else {
+            clickedButton.classList.remove('fa-pause');
+            clickedButton.classList.add('fa-play');
+        }
+    }
+
+    function normalizeString(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function toggleMode() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+        const toggleBtn = document.querySelectorAll('.toggle-btn');
+
+        toggleBtn.forEach(function (toggleBtn) {
+            if (body.classList.contains('dark-mode')) {
+                toggleBtn.classList.add('fa-toggle-on');
+                toggleBtn.classList.remove('fa-toggle-off');
+            } else {
+                toggleBtn.classList.remove('fa-toggle-on');
+                toggleBtn.classList.add('fa-toggle-off');
+            }
+        });
+
         localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
     }
 });
@@ -138,60 +195,3 @@ function updateOptionsHitradio() {
             });
         }
     }
-
-function playRadio(audioId) {
-        const audio = document.getElementById(audioId);
-
-        document.querySelectorAll('audio').forEach(function (otherAudio) {
-            if (otherAudio.id !== audioId) {
-                otherAudio.pause();
-                otherAudio.src = otherAudio.src + '?cachebust=' + new Date();
-                const otherPlayBtn = document.querySelector(`.playbtn[data-radio-id="${otherAudio.id}"]`);
-                if (otherPlayBtn) {
-                    otherPlayBtn.classList.remove('fa-pause');
-                    otherPlayBtn.classList.add('fa-play');
-                }
-            }
-        });
-
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-            audio.src = audio.src + '?cachebust=' + new Date();
-            const playBtn = document.querySelector(`.playbtn[data-radio-id="${audioId}"]`);
-            if (playBtn) {
-                playBtn.classList.remove('fa-pause');
-                playBtn.classList.add('fa-play');
-            }
-        }
-    }
-
-    function changePlayBtn(clickedButton) {
-        if (clickedButton.classList.contains('fa-play')) {
-            clickedButton.classList.remove('fa-play');
-            clickedButton.classList.add('fa-pause');
-        } else {
-            clickedButton.classList.remove('fa-pause');
-            clickedButton.classList.add('fa-play');
-        }
-    }
-
-    function normalizeString(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    }
-
-    function toggleMode() {
-        const body = document.body;
-        body.classList.toggle('dark-mode');
-        const toggleBtn = document.querySelectorAll('.toggle-btn');
-
-        toggleBtn.forEach(function (toggleBtn) {
-            if (body.classList.contains('dark-mode')) {
-                toggleBtn.classList.add('fa-toggle-on');
-                toggleBtn.classList.remove('fa-toggle-off');
-            } else {
-                toggleBtn.classList.remove('fa-toggle-on');
-                toggleBtn.classList.add('fa-toggle-off');
-            }
-        });
