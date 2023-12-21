@@ -105,16 +105,23 @@ function toggleMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
     const toggleBtn = document.querySelectorAll('.toggle-btn');
+    const fajnLogo = document.querySelector('.box1-fajn .radio-logo');
 
-    toggleBtn.forEach(function (toggleBtn) {
-        if (body.classList.contains('dark-mode')) {
+    if (body.classList.contains('dark-mode')) {
+        toggleBtn.forEach(function (toggleBtn) {
             toggleBtn.classList.add('fa-toggle-on');
             toggleBtn.classList.remove('fa-toggle-off');
-        } else {
+        });
+
+        fajnLogo.src = 'imgs/fajn-dark.svg';
+    } else {
+        toggleBtn.forEach(function (toggleBtn) {
             toggleBtn.classList.remove('fa-toggle-on');
             toggleBtn.classList.add('fa-toggle-off');
-        }
-    });
+        });
+
+        fajnLogo.src = 'imgs/fajn.svg';
+    }
 
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 }
