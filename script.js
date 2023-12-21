@@ -142,7 +142,7 @@ function updateOptionsCRo() {
         playBtn.setAttribute("onclick", "playRadio('rpraha')");
         playBtn.setAttribute("data-radio-id", "rpraha");
         hrefLink.href = "https://praha.rozhlas.cz/";
-        radioLogo.src = 'imgs/cro.jpg';
+        radioLogo.src = 'imgs/cropraha.png';
     }
        
     else if (citySelectValue == "rbrno") {
@@ -150,7 +150,7 @@ function updateOptionsCRo() {
         playBtn.setAttribute("onclick", "playRadio('rbrno')");
         playBtn.setAttribute("data-radio-id", "rbrno");
         hrefLink.href = "https://brno.rozhlas.cz/";
-        radioLogo.src = 'imgs/crobrno.webp';
+        radioLogo.src = 'imgs/crobrno.png';
     }
     
     else if (citySelectValue == "rostrava") {
@@ -159,6 +159,94 @@ function updateOptionsCRo() {
         playBtn.setAttribute("data-radio-id", "rostrava");
         hrefLink.href = "https://ostrava.rozhlas.cz/";
         radioLogo.src = 'imgs/croostrava.png';
+    }
+
+    else if (citySelectValue == "rolomouc") {
+        linkBtn.innerHTML = "olomouc.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rolomouc')");
+        playBtn.setAttribute("data-radio-id", "rolomouc");
+        hrefLink.href = "https://olomouc.rozhlas.cz/";
+        radioLogo.src = 'imgs/croolomouc.png';
+    }
+
+    else if (citySelectValue == "rcb") {
+        linkBtn.innerHTML = "budejovice.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rcb')");
+        playBtn.setAttribute("data-radio-id", "rcb");
+        hrefLink.href = "https://budejovice.rozhlas.cz/";
+        radioLogo.src = 'imgs/rcb.png';
+    }
+
+    else if (citySelectValue == "rhk") {
+        linkBtn.innerHTML = "hradec.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rhk')");
+        playBtn.setAttribute("data-radio-id", "rhk");
+        hrefLink.href = "https://hradec.rozhlas.cz/";
+        radioLogo.src = 'imgs/rhk.png';
+    }
+
+    else if (citySelectValue == "rkv") {
+        linkBtn.innerHTML = "vary.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rkv')");
+        playBtn.setAttribute("data-radio-id", "rkv");
+        hrefLink.href = "https://vary.rozhlas.cz/";
+        radioLogo.src = 'imgs/rkv.png';
+    }
+
+    else if (citySelectValue == "rliberec") {
+        linkBtn.innerHTML = "liberec.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rliberec')");
+        playBtn.setAttribute("data-radio-id", "rliberec");
+        hrefLink.href = "https://liberec.rozhlas.cz/";
+        radioLogo.src = 'imgs/rliberec.png';
+    }
+
+    else if (citySelectValue == "rpardubice") {
+        linkBtn.innerHTML = "pardubice.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rpardubice')");
+        playBtn.setAttribute("data-radio-id", "rpardubice");
+        hrefLink.href = "https://pardubice.rozhlas.cz/";
+        radioLogo.src = 'imgs/rpardubice.png';
+    }
+
+    else if (citySelectValue == "rplzen") {
+        linkBtn.innerHTML = "plzen.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rplzen')");
+        playBtn.setAttribute("data-radio-id", "rplzen");
+        hrefLink.href = "https://plzen.rozhlas.cz/";
+        radioLogo.src = 'imgs/rplzen.png';
+    }
+
+    else if (citySelectValue == "rregion") {
+        linkBtn.innerHTML = "region.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rregion')");
+        playBtn.setAttribute("data-radio-id", "rregion");
+        hrefLink.href = "https://region.rozhlas.cz/";
+        radioLogo.src = 'imgs/rregion.png';
+    }
+
+    else if (citySelectValue == "rsever") {
+        linkBtn.innerHTML = "sever.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rsever')");
+        playBtn.setAttribute("data-radio-id", "rsever");
+        hrefLink.href = "https://sever.rozhlas.cz/";
+        radioLogo.src = 'imgs/rsever.png';
+    }
+
+    else if (citySelectValue == "rvysocina") {
+        linkBtn.innerHTML = "vysocina.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rvysocina')");
+        playBtn.setAttribute("data-radio-id", "rvysocina");
+        hrefLink.href = "https://vysocina.rozhlas.cz/";
+        radioLogo.src = 'imgs/rvysocina.png';
+    }
+
+    else if (citySelectValue == "rzlin") {
+        linkBtn.innerHTML = "zlin.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        playBtn.setAttribute("onclick", "playRadio('rzlin')");
+        playBtn.setAttribute("data-radio-id", "rzlin");
+        hrefLink.href = "https://zlin.rozhlas.cz/";
+        radioLogo.src = 'imgs/rzlin.png';
     }
    
     if (playBtn.classList.contains("fa-pause")) {
@@ -203,7 +291,63 @@ function updateOptionsHitradio() {
             radioLogo.src = 'imgs/orion.svg';
             hrefLink.href = "https://hitradioorion.cz/";
         }
+
+        else if (citySelectValue == "hitradio-contact") {
+            linkBtn.innerHTML = "hitradiocontact.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-contact')");
+            playBtn.setAttribute("data-radio-id", "hitradio-contact");
+            radioLogo.src = 'imgs/contact.svg';
+            hrefLink.href = "https://hitradiocontact.cz/";
+        }
     
+        else if (citySelectValue == "hitradio-cernahora") {
+            linkBtn.innerHTML = "hitradiocernahora.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-cernahora')");
+            playBtn.setAttribute("data-radio-id", "hitradio-cernahora");
+            radioLogo.src = 'imgs/cernahora.svg';
+            hrefLink.href = "https://hitradiocernahora.cz/";
+        }
+
+        else if (citySelectValue == "hitradio-faktor") {
+            linkBtn.innerHTML = "hitradiofaktor.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-faktor')");
+            playBtn.setAttribute("data-radio-id", "hitradio-faktor");
+            radioLogo.src = 'imgs/faktor.svg';
+            hrefLink.href = "https://hitradiofaktor.cz/";
+        }
+
+        else if (citySelectValue == "hitradio-fmplus") {
+            linkBtn.innerHTML = "hitradiofmplus.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-fmplus')");
+            playBtn.setAttribute("data-radio-id", "hitradio-fmplus");
+            radioLogo.src = 'imgs/fmplus.svg';
+            hrefLink.href = "https://hitradiofmplus.cz/";
+        }
+
+        else if (citySelectValue == "hitradio-northmusic") {
+            linkBtn.innerHTML = "hitradionorthmusic.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-northmusic')");
+            playBtn.setAttribute("data-radio-id", "hitradio-northmusic");
+            radioLogo.src = 'imgs/north.svg';
+            hrefLink.href = "https://hitradionorthmusic.cz/";
+        }
+
+        else if (citySelectValue == "hitradio-vysocina") {
+            linkBtn.innerHTML = "hitradiovysocina.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-vysocina')");
+            playBtn.setAttribute("data-radio-id", "hitradio-vysocina");
+            radioLogo.src = 'imgs/vysocina.svg';
+            hrefLink.href = "https://hitradiovysocina.cz/";
+        }
+
+        else if (citySelectValue == "hitradio-zlin") {
+            linkBtn.innerHTML = "hitradiozlin.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            playBtn.setAttribute("onclick", "playRadio('hitradio-zlin')");
+            playBtn.setAttribute("data-radio-id", "hitradio-zlin");
+            radioLogo.src = 'imgs/zlin.svg';
+            hrefLink.href = "https://hitradiozlin.cz/";
+        }
+
         if (playBtn.classList.contains("fa-pause")) {
             playBtn.classList.remove("fa-pause");
             playBtn.classList.add("fa-play");
