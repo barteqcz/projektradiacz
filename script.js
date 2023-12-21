@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
     }
+});
 
     function updateOptionsCRo() {
         let citySelect = document.getElementById("cro-city");
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function updateOptionsHitradio() {
+function updateOptionsHitradio() {
         let citySelect = document.getElementById("hitradio-city");
         let citySelectValue = citySelect.value;
         let radioLogo = document.querySelector(".box1-hitradio .radio-logo");
@@ -194,4 +195,3 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-});
