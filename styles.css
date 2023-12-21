@@ -188,7 +188,7 @@ a {
     .box2 {
         margin-left: 20px;
         margin-right: 20px;
-        width: 45%;
+        width: 100%;
     }
 
     .box2-cro p, .box2-hitradio p {
@@ -196,7 +196,7 @@ a {
     }
 
     .box3 {
-        width: 100%;
+        width: 60%;
     }
 
     .fa-custom-size {
