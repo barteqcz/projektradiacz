@@ -17,6 +17,10 @@ a {
     cursor: not-allowed;
 }
 
+.p-dropdown-box {
+    margin-top: -2px
+}
+
 /* Styles for the taskbar */
 #taskbar {
     color: #353541;
@@ -168,13 +172,13 @@ a {
         width: 52%;
     }
 
-    .box2-cro, .box2-hitradio {
-        flex-direction: column;
+    .dropdown {
+        max-width: 100px;
+        font-size: 12px;
     }
 
-    .dropdown {
-        width: 150px;
-        font-size: 12px;
+    .box2-cro p, .box2-hitradio p {
+        font-size: 14px;
     }
 
     .fa-custom-size {
