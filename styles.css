@@ -17,10 +17,6 @@ a {
     cursor: not-allowed;
 }
 
-.p-dropdown-box {
-    margin-top: -2px
-}
-
 /* Styles for the taskbar */
 #taskbar {
     color: #353541;
