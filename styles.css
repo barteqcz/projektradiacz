@@ -13,14 +13,6 @@ a {
     text-decoration: none;
 }
 
-:disabled {
-    cursor: not-allowed;
-}
-
-.p-dropdown-box {
-    margin-top: -2px
-}
-
 /* Styles for the taskbar */
 #taskbar {
     color: #353541;
@@ -178,8 +170,7 @@ a {
     }
 
     .box2-cro p, .box2-hitradio p {
-        font-size: 12px;
-        margin-right: 15px;
+        display: none;
     }
 
     .fa-custom-size {
