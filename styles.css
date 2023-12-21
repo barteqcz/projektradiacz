@@ -53,6 +53,11 @@ a {
     width: 200px;
 }
 
+.radio-logo {
+    height: 100px;
+    width: 100px;
+}
+
 /* Styles for search bar */
 .searchbar {
     background-color: #e5e0e4;
