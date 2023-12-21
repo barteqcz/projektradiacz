@@ -184,7 +184,7 @@ a {
 }
 
 /* Desktop */
-@media (max-width: 1200px) {
+@media (min-width: 767px) {
     .box2 {
         margin-left: 20px;
         margin-right: 20px;
@@ -196,29 +196,7 @@ a {
     }
 
     .box3 {
-        width: 60%;
-    }
-
-    .fa-custom-size {
-        font-size: 64px;
-    }
-}
-
-/* Full desktop */
-@media (min-width: 1200px) {
-    .box2 {
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 45%;
-    }
-
-    .box2-cro p, .box2-hitradio p {
-        font-size: 18px;
-        margin-right: 10px;
-    }
-
-    .box3 {
-        width: 60%;
+        width: 100%;
     }
 
     .fa-custom-size {
