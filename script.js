@@ -138,7 +138,7 @@ function updateOptionsCRo() {
     let hrefLink = document.querySelector(".box4-cro .cro-href");
     
     if (citySelectValue == "rpraha") {
-        linkBtn.innerHTML = "praha.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        linkBtn.innerHTML = "praha.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
         playBtn.setAttribute("onclick", "playRadio('rpraha')");
         playBtn.setAttribute("data-radio-id", "rpraha");
         hrefLink.href = "https://praha.rozhlas.cz/";
@@ -146,7 +146,7 @@ function updateOptionsCRo() {
     }
        
     else if (citySelectValue == "rbrno") {
-        linkBtn.innerHTML = "brno.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        linkBtn.innerHTML = "brno.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
         playBtn.setAttribute("onclick", "playRadio('rbrno')");
         playBtn.setAttribute("data-radio-id", "rbrno");
         hrefLink.href = "https://brno.rozhlas.cz/";
@@ -154,7 +154,7 @@ function updateOptionsCRo() {
     }
     
     else if (citySelectValue == "rostrava") {
-        linkBtn.innerHTML = "ostrava.rozhlas.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+        linkBtn.innerHTML = "ostrava.rozhlas.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
         playBtn.setAttribute("onclick", "playRadio('rostrava')");
         playBtn.setAttribute("data-radio-id", "rostrava");
         hrefLink.href = "https://ostrava.rozhlas.cz/";
@@ -181,7 +181,7 @@ function updateOptionsHitradio() {
         let hrefLink = document.querySelector(".box4-hitradio .hitradio-href");
     
         if (citySelectValue == "hitradio-city-praha") {
-            linkBtn.innerHTML = "hitradiocity.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            linkBtn.innerHTML = "hitradiocity.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('hitradio-city-praha')");
             playBtn.setAttribute("data-radio-id", "hitradio-city-praha");
             radioLogo.src = 'imgs/city937.svg';
@@ -189,7 +189,7 @@ function updateOptionsHitradio() {
         }
         
         else if (citySelectValue == "hitradio-city-brno") {
-            linkBtn.innerHTML = "hitradiocitybrno.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            linkBtn.innerHTML = "hitradiocitybrno.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('hitradio-city-brno')");
             playBtn.setAttribute("data-radio-id", "hitradio-city-brno");
             radioLogo.src = 'imgs/citybrno.svg';
@@ -197,7 +197,7 @@ function updateOptionsHitradio() {
         }
     
         else if (citySelectValue == "hitradio-orion") {
-            linkBtn.innerHTML = "hitradioorion.cz &nbsp;<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
+            linkBtn.innerHTML = "hitradioorion.cz<i class='fa-solid fa-arrow-up-right-from-square icon-right'></i>";
             playBtn.setAttribute("onclick", "playRadio('hitradio-orion')");
             playBtn.setAttribute("data-radio-id", "hitradio-orion");
             radioLogo.src = 'imgs/orion.svg';
