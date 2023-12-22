@@ -105,8 +105,6 @@ function toggleMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
     const toggleBtn = document.querySelectorAll('.toggle-btn');
-    let fajnLogo = document.querySelector('.box1-fajn .radio-logo');
-    let f1Logo = document.querySelector('.box1-f1 .radio-logo');
 
     if (body.classList.contains('dark-mode')) {
         toggleBtn.forEach(function (toggleBtn) {
@@ -114,16 +112,12 @@ function toggleMode() {
             toggleBtn.classList.remove('fa-toggle-off');
         });
 
-        fajnLogo.src = 'imgs/fajn-dark.svg';
-        f1Logo.src = 'imgs/f1-dark.jpg';
     } else {
         toggleBtn.forEach(function (toggleBtn) {
             toggleBtn.classList.remove('fa-toggle-on');
             toggleBtn.classList.add('fa-toggle-off');
         });
 
-        fajnLogo.src = 'imgs/fajn.svg';
-        f1Logo.src = 'imgs/f1.png';
     }
 
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
