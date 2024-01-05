@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+/* Semantic styles */
 html {
     font-family: "Roboto", sans-serif;
 }
@@ -13,8 +14,7 @@ a {
     text-decoration: none;
 }
 
-/* Styles for the taskbar */
-#taskbar {
+header {
     color: #353541;
     display: flex;
     align-items: center;
@@ -23,36 +23,19 @@ a {
     margin-right: 20px;
 }
 
-.taskbar-icons {
-    color: #353541;
-    font-size: 40px;
-    margin-right: 20px;
-}
-
-.btn-taskbar-mobile {
-    color: #fffbff;
-    border-radius: 18px;
-    background-color: #353541;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-}
-
-.btn-taskbar-desktop {
-    color: #fffbff;
-    border-radius: 18px;
-    background-color: #353541;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-    width: 200px;
-}
-
-/* Common styles */
-.stations {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+footer {
+    height: 30px;
+}
+
+.taskbar-icons {
+    color: #353541;
+    font-size: 40px;
 }
 
 #noStationsFound {
@@ -122,11 +105,6 @@ a {
     width: 200px;
 }
 
-/* Styles for footer */
-.footer {
-    height: 30px;
-}
-
 /* Helper classes styles */
 .btn-link {
     cursor: pointer;
@@ -151,25 +129,6 @@ a {
     border: 0;
     font-size: 14px;
     margin-right: 20px;
-}
-
-.dark-mode .btn-taskbar-mobile {
-    color: #fffbff;
-    border-radius: 18px;
-    background-color: #3e3e3f;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-}
-
-.dark-mode .btn-taskbar-desktop {
-    color: #fffbff;
-    border-radius: 18px;
-    background-color: #3e3e3f;
-    padding: 12px;
-    border: 0;
-    font-size: 16px;
-    width: 200px;
 }
 
 .dark-mode .box {
@@ -226,10 +185,6 @@ a {
     .box4 {
         display: none;
     }
-    
-    .btn-taskbar-desktop {
-        display: none;
-    }
 }
 
 /* Desktop */
@@ -250,9 +205,5 @@ a {
 
     .fa-custom-size {
         font-size: 64px;
-    }
-
-    .btn-taskbar-mobile {
-        display: none;
     }
 }
