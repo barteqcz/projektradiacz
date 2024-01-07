@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const noStationsFound = document.getElementById('noStationsFound');
 
-    document.querySelectorAll('audio').forEach(function (audio) {
-        audio.src = audio.src + '?cachebust=' + new Date();
-    });
-
     document.querySelector('.searchbar').addEventListener('input', function () {
         const searchTerm = normalizeString(this.value);
         let stationsFound = false;
