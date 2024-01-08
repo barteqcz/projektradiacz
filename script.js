@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("cro-city").value = "rpraha";
     document.getElementById("hitradio-city").value = "hitradio-city-praha";
+
+    updateOptionsCRo();
+    updateOptionsHitradio();
+
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
     if (isDarkMode) {
